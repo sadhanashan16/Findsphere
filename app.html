@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FindSphere | Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <img src="logo.png" class="nav-logo">
+  <ul>
+    <li onclick="showPage('home')">Home</li>
+    <li onclick="showPage('lost')">Lost</li>
+    <li onclick="showPage('found')">Found</li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <h1>FindSphere</h1>
+  <p class="tagline">A centralized platform that connects lost items with their owners</p>
+  <div class="cards">
+    <div class="card" onclick="showPage('lost')">Report Lost Item</div>
+    <div class="card" onclick="showPage('found')">View Found Items</div>
+  </div>
+</section>
+
+<!-- LOST -->
+<section id="lost" class="page">
+  <h2>Report Lost Item</h2>
+   <form class="form">
+  <input id="itemName" type="text" placeholder="Item Name">
+  <input id="itemLocation" type="text" placeholder="Location Lost">
+  <textarea id="itemDesc" placeholder="Description"></textarea>
+  <input id="itemImage" type="file" accept="image/*">
+  <button type="button" onclick="submitLost()">Submit</button>
+</form>
+  </section>
+
+<!-- FOUND -->
+<section id="found" class="page">
+  <h2>Found Items</h2>
+  <div id="foundList" class="found-list"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
